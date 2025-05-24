@@ -1,0 +1,28 @@
+{
+  "name": "Research Assistant",
+  "description": "Research Assistant Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "storage", "sidePanel", "scripting"],
+  "action": {
+    "default_title": "Research Assistant"
+  },
+  "icons": {
+    "16": "src/images/logo.png",
+    "48": "src/images/logo.png",
+    "128": "src/images/logo.png"
+  },
+  "side_panel": {
+    "default_path": "src/html/sidepanel.html"
+  },
+  "background": {
+    "service_worker": "src/js/background.js"
+  },
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
